@@ -33,13 +33,13 @@ const FloatingWhatsAppButton = () => {
   }, [scrollTimeout]);
   
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-center">
+    <div className="fixed bottom-6 sm:bottom-8 right-4 sm:right-8 z-50 flex flex-col items-center">
       {/* Text bubble that appears/disappears */}
       <div 
-        className={`bg-white text-[#128C7E] font-bold px-5 py-3 rounded-2xl shadow-xl mb-3 transition-all duration-300 flex items-center relative ${(isScrolling || isHovered) ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'}`}
+        className={`bg-white text-[#128C7E] font-bold px-3 sm:px-5 py-2 sm:py-3 rounded-2xl shadow-xl mb-2 sm:mb-3 transition-all duration-300 flex items-center relative ${(isScrolling || isHovered) ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'}`}
       >
-        <span className="text-lg">Talk to us</span>
-        <div className="absolute -bottom-3 right-6 w-4 h-4 bg-white transform rotate-45"></div>
+        <span className="text-sm sm:text-lg">Talk to us</span>
+        <div className="absolute -bottom-2 sm:-bottom-3 right-4 sm:right-6 w-3 sm:w-4 h-3 sm:h-4 bg-white transform rotate-45"></div>
       </div>
       
       {/* WhatsApp button that's always visible with online indicator inside */}
@@ -50,11 +50,11 @@ const FloatingWhatsAppButton = () => {
         className="rounded-full shadow-2xl hover:shadow-xl transition-all duration-300 flex items-center justify-center bg-white p-1 focus:outline-none hover:scale-110 transform-gpu relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        style={{ width: '5rem', height: '5rem' }}
+        style={{ width: '3.5rem', height: '3.5rem', maxWidth: '100%' }}
       >
         {/* Online status indicator inside button */}
-        <div className="absolute top-0 right-0 w-auto h-auto bg-white rounded-full z-10 shadow-md px-2 py-1 border-2 border-green-500 flex items-center text-xs font-bold" style={{ transform: 'translate(25%, -25%)' }}>
-          <span className="animate-pulse mr-1 h-2 w-2 bg-green-500 rounded-full inline-block"></span>
+        <div className="absolute top-0 right-0 w-auto h-auto bg-white rounded-full z-10 shadow-md px-1 sm:px-2 py-0.5 sm:py-1 border-2 border-green-500 flex items-center text-[10px] sm:text-xs font-bold" style={{ transform: 'translate(25%, -25%)' }}>
+          <span className="animate-pulse mr-0.5 sm:mr-1 h-1.5 sm:h-2 w-1.5 sm:w-2 bg-green-500 rounded-full inline-block"></span>
           <span className="text-green-700">ONLINE</span>
         </div>
         

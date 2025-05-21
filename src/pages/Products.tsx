@@ -97,14 +97,14 @@ const Products = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <div className="relative h-72">
+        <div className="relative h-48 md:h-72">
           <img 
             src="https://shamajamabati.co.ke/wp-content/uploads/2024/04/Home-stick-1.jpg" 
             alt="Maisha Mabati Factory" 
             className="w-full h-full object-cover brightness-50"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl font-bold text-white">MAISHA MABATI PRODUCTS</h1>
+          <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+            <h1 className="text-3xl md:text-5xl font-bold text-white">MAISHA MABATI PRODUCTS</h1>
           </div>
         </div>
 
@@ -122,8 +122,8 @@ const Products = () => {
           </Breadcrumb>
           
           <div className="max-w-3xl mb-8">
-            <h2 className="text-3xl font-bold text-maisha-navy mb-4">Maisha Mabati Products</h2>
-            <p className="text-gray-700">
+            <h2 className="text-2xl md:text-3xl font-bold text-maisha-navy mb-4">Maisha Mabati Products</h2>
+            <p className="text-gray-700 text-sm md:text-base">
               Our high quality, KEBS standard roofing sheets are durable, functional and strong with a 
               wide variety to meet every customer need whether on-demand or custom.
             </p>
@@ -140,7 +140,7 @@ const Products = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {filteredProducts.map((product, index) => (
               <ProductCard 
                 key={index} 

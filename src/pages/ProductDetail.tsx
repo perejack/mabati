@@ -94,23 +94,23 @@ const ProductDetail = () => {
             </BreadcrumbList>
           </Breadcrumb>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             <div className="relative">
               <img 
-                src={product.imageSrc} 
+                src={product.image || "https://via.placeholder.com/800x600"} 
                 alt={product.title} 
                 className="w-full rounded-lg shadow-md"
               />
               <div className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-sm">
-                <Search className="w-6 h-6 text-gray-600" />
+                <Search className="w-5 h-5 md:w-6 md:h-6 text-gray-600" />
               </div>
             </div>
             
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h1 className="text-3xl font-bold text-maisha-navy uppercase">{product.title}</h1>
+            <div className="mt-6 lg:mt-0">
+              <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                <h1 className="text-2xl md:text-3xl font-bold text-maisha-navy uppercase">{product.title}</h1>
                 {product.sale && (
-                  <span className="bg-red-600 text-white px-3 py-1 rounded-md text-sm font-medium">
+                  <span className="bg-red-600 text-white px-2 md:px-3 py-1 rounded-md text-xs md:text-sm font-medium">
                     SALE!
                   </span>
                 )}
@@ -138,15 +138,15 @@ const ProductDetail = () => {
               {product.priceVariants && (
                 <>
                   <h3 className="font-semibold text-maisha-navy mb-3">Pricing:</h3>
-                  <div className="bg-gray-50 rounded-lg p-4 mb-6 relative overflow-hidden">
+                  <div className="bg-gray-50 rounded-lg p-3 md:p-4 mb-6 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
-                    <div className="mb-3 py-2 px-3 bg-blue-100 text-blue-800 rounded-md text-sm">
+                    <div className="mb-3 py-2 px-3 bg-blue-100 text-blue-800 rounded-md text-xs md:text-sm">
                       <strong>Special Discount!</strong> Order today and get 5% off on orders above 50 meters.
                     </div>
                     {product.priceVariants.map((variant: any, index: number) => (
-                      <div key={index} className="flex justify-between items-center border-b border-gray-200 py-3 last:border-0 last:pb-0 first:pt-0">
-                        <span className="text-gray-700 font-medium">{variant.name}</span>
-                        <span className="font-bold text-maisha-navy text-lg">{variant.price}</span>
+                      <div key={index} className="flex justify-between items-center border-b border-gray-200 py-2 md:py-3 last:border-0 last:pb-0 first:pt-0">
+                        <span className="text-gray-700 font-medium text-sm md:text-base">{variant.name}</span>
+                        <span className="font-bold text-maisha-navy text-base md:text-lg">{variant.price}</span>
                       </div>
                     ))}
                     
@@ -188,8 +188,8 @@ const ProductDetail = () => {
 
           {relatedProducts.length > 0 && (
             <div className="mb-16">
-              <h2 className="text-2xl font-bold text-maisha-navy mb-6">RELATED PRODUCTS</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <h2 className="text-xl md:text-2xl font-bold text-maisha-navy mb-4 md:mb-6">Related Products</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
                 {relatedProducts.map((relatedProduct, index) => (
                   <RelatedProductCard 
                     key={index} 
