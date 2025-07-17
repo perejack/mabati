@@ -21,8 +21,12 @@ const Header = () => {
               <div className="absolute top-4 left-6 md:top-6 md:left-8 text-3xl md:text-4xl font-bold text-red-600">M</div>
               <div className="absolute top-8 left-9 md:top-12 md:left-12 text-xs font-bold text-white">ABATI</div>
             </div>
-            <div className="ml-2">
+            <div className="ml-2 flex items-center gap-4">
               <span className="text-maisha-navy italic font-light text-sm md:text-base">Mabati For Life</span>
+              <a href="tel:+254780858702" className="flex items-center text-maisha-navy font-medium text-sm md:text-base hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-maisha-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a2 2 0 011.94 1.515l.518 2.072a2 2 0 01-.45 1.924l-1.27 1.27a16.001 16.001 0 006.586 6.586l1.27-1.27a2 2 0 011.924-.45l2.072.518A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C7.163 23 1 16.837 1 9V8a2 2 0 012-2z" /></svg>
+                +254780858702
+              </a>
             </div>
           </Link>
 
